@@ -27,6 +27,7 @@ inline void Insert() {
         else e = son[e][opt] = ++ cnt;
     }
     endx[e] |= (1 << (++ poi - 1));
+    // no endx[e] = (1 << (++ poi - 1));
 }
 
 inline void AC() {
