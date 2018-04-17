@@ -39,7 +39,6 @@ inline void Build_AC() {
 		for(int i = 0; i <= 25; i ++)
 		if(son[e][i]) fail[son[e][i]] = son[fail[e]][i], q[++ to] = son[e][i];
 		else son[e][i] = son[fail[e]][i];
-		//printf("%d %d\n",e,fail[e]);
 	}
 }
 
@@ -55,7 +54,6 @@ inline void Puts_Fail() {
 		}
 		else for(int i = cap[e]; i; i = nxt[i]) {
 			int d = node[i]; mark[d] = 1;
-			//printf("%s %d %d\n", __FUNCTION__ , e, d);
 			q[++ to] = d;
 		}
 	}
