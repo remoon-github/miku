@@ -23,7 +23,6 @@ inline void Insert(int tim) {
 	int l = strlen(s + 1);
 	for(int i = 1; i <= l; i ++) {
 		int opt = s[i] - 'A';
-		//printf("insert : %d\n", opt);
 		if(son[e][opt]) e = son[e][opt];
 		else e = son[e][opt] = ++ tot;
 	}
