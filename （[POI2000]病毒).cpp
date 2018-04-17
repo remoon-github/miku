@@ -16,12 +16,9 @@ inline void Build_Tire() {
 	int len = strlen(s + 1);
 	for(int i = 1; i <= len; i ++) {
 		int opt = s[i] - '0';
-		//printf("%d %d son : ",e,opt);
 		if(son[e][opt]) e = son[e][opt];
 		else e = son[e][opt] = ++ tot;
-		//printf("%d\n", e);
 	}
-	//printf("mark end : %d\n",e);
 	endx[e] = 1;
 }
 
@@ -34,7 +31,6 @@ inline void Build_AC() {
 		for(int i = 0; i <= 1; i ++)
 		if(son[e][i]) fail[son[e][i]] = son[fail[e]][i], q[++ to] = son[e][i];
 		else son[e][i] = son[fail[e]][i];
-		//printf("node : %d %d %d %d\n",e,fail[e],son[e][0],son[e][1]);
 	}
 }
 
@@ -45,17 +41,12 @@ inline void BFS(int e) {
 		if(ok[d] != 2) {
 			for(int j = d; j; j = fail[j])
 			if(endx[j]) {
-			//printf("%d %d   %d %d\n",e,d,j,endx[j]);
 				ok[d] = 1;
 				break;
 			}
 			if(ok[d] == 1) continue;
 			ok[d] = 2;
 		}
-		//printf("%d %d %d\n",e,i,d);
-		//for(int j=1;j<=9;j++)
-		//printf("%d ",ok[j]);
-		//printf("\nshow end\n\n");
 		if(vis[d] == 1) {
 			flag = 1;
 			return;
