@@ -45,10 +45,8 @@ inline void Match() {
 int main() {
     scanf("%s", s + 1);
     scanf("%d", &n);
-    for(int i = 1; i <= n; i ++) {
-        scanf("%s", sc + 1);
-        Trie();
-    }    
+    for(int i = 1; i <= n; i ++) 
+    { scanf("%s", sc + 1); Trie(); }    
     Fail();
     Match();
     return 0;
