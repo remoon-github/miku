@@ -73,7 +73,6 @@ inline void DP() {
     dp[0][0] = 1;
     for(int i = 1; i <= n; i ++)
     for(int j = 0; j <= cnt; j ++)
-    if(dp[j][i - 1] > 0)
     for(int k = 1; k <= 65; k ++)
     if(!no[son[j][k]]) {
         int d = son[j][k];
