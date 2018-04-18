@@ -97,12 +97,14 @@ inline void Solve() {
 				pp ++;
 			}
 		}
-		else e = son[e][s[i] - 'a'], modify(dfn[e], 1);
+		else e = son[e][s[i] - 'a'], 
+		modify(dfn[e], 1);
 	}
 }
 
 inline void Print_ans() {
-	for(ri i = 1; i <= m; i ++) printf("%d\n", ans[i]);
+	for(ri i = 1; i <= m; i ++) 
+		printf("%d\n", ans[i]);
 }
 
 int main() {
