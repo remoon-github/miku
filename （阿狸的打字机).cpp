@@ -102,8 +102,7 @@ inline void Solve() {
 }
 
 inline void Print_ans() {
-	for(ri i = 1; i <= m; i ++)
-	printf("%d\n", ans[i]);
+	for(ri i = 1; i <= m; i ++) printf("%d\n", ans[i]);
 }
 
 int main() {
