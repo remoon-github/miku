@@ -27,16 +27,15 @@ ll dp[sid], pre[sid];
 
 
 inline ll Dp(int i, int j) {
-    if(i < j) return (1LL << 55);
     ll tmp = pre[j] - pre[i] - L - 1;
     return dp[i] + tmp * tmp;
 }
 
-inline int Binary(int w) {
+inline int Binary(int run) {
     int l = lp[top], r = n;
     while(l <= r) {
         int mid = (l + r) >> 1;
-        if(Dp(i, mid) < Dp(go[top], mid)) r = mid - 1;
+        if(Dp(run, mid) < Dp(go[top], mid)) r = mid - 1;
         else l = mid + 1;
     }
     return l;
@@ -47,7 +46,7 @@ inline void DP() {
     lp[1] = 1; go[1] = 0;
     for(ri i = 1; i <=  n; i ++) {
         if(i == lp[tra + 1]) tra ++;
-        dp[i] = Dp(lp[tra], i);
+        dp[i] = Dp(go[tra], i);
         while(Dp(i, lp[top]) < Dp(go[top], lp[top])) top --;
         int tmp = Binary(i);
         if(tmp <= n) lp[++ top] = tmp, go[top] = i;
