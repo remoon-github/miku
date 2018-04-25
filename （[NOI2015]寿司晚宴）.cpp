@@ -55,6 +55,7 @@ inline void DP() {
             int d = go[l][r];
             dp[l][d] = f[0][l][d] + f[1][l][d] - dp[l][d];
         }
+        deal[maxp[i]] = 1;
     }
     for(int i = bit[8] - 1; i >= 0; i --)
     for(int j = 1; j <= tot[i]; j ++)
